@@ -18,7 +18,7 @@ namespace MusicStore.Api.Controllers
 
         [HttpGet]
         public ActionResult<List<Genre>> Get()
-        {
+        { 
             return repository.Get();
         }
 
