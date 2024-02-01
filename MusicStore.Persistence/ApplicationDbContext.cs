@@ -19,7 +19,6 @@ namespace MusicStore.Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
             modelBuilder.Entity<Genre>().Property(x=>x.Name).HasMaxLength(50);
         }
 
