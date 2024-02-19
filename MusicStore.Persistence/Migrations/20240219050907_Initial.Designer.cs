@@ -11,8 +11,8 @@ using MusicStore.Persistence;
 namespace MusicStore.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240129045121_initial")]
-    partial class initial
+    [Migration("20240219050907_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
