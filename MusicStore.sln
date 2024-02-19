@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicStore.Entities", "Musi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicStore.Repositories", "MusicStore.Repositories\MusicStore.Repositories.csproj", "{D56C8D3D-3260-4C7D-8CCA-789FAA0E068A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Persistence", "MusicStore.Persistence\MusicStore.Persistence.csproj", "{9452A965-A196-4A6D-B710-30A5EDFC9816}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicStore.Persistence", "MusicStore.Persistence\MusicStore.Persistence.csproj", "{9452A965-A196-4A6D-B710-30A5EDFC9816}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
