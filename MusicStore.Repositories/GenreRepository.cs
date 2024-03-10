@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using MusicStore.Entities;
 using MusicStore.Persistence;
 
@@ -17,12 +18,25 @@ namespace MusicStore.Repositories
         //Metodos
         public async Task<List<Genre>> GetAsync()
         {
-            return await context.Genres.ToListAsync();
+            return await context.Genres
+                .AsNoTracking()
+                .ToListAsync();
         }
 
         public async Task<Genre?> GetAsync(int id)
         {
-            return await context.Genres.FirstOrDefaultAsync(x => x.Id == id);
+            var item = await context.Genres
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            if (item is not null)
+            {
+                return item;
+            }
+            else
+            {
+                throw new InvalidOperationException($"No se encontro el registro con id {id}.");
+            }
         }
 
         public async Task<int> AddAsync(Genre genre)
@@ -45,7 +59,7 @@ namespace MusicStore.Repositories
             }
             else
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException($"No se encontro el registro con id {id}.");
             }
         }
 
@@ -59,7 +73,7 @@ namespace MusicStore.Repositories
             }
             else
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException($"No se encontro el registro con id {id}.");
             }
         }
 
